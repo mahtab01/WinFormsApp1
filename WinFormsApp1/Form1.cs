@@ -26,6 +26,7 @@ namespace WinFormsApp1
         {
            Sru1 form = new Sru1();
             form.ShowDialog();
+            
 
 
 

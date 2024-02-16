@@ -56,6 +56,7 @@ namespace WinFormsApp1
                 student.Gender = radio_Female.Checked;
 
                 students.Add(student);
+              
                 MessageBox.Show("اطلاعات ثبت شد");
             }
             else
@@ -69,6 +70,16 @@ namespace WinFormsApp1
 
                 MessageBox.Show("اطلاعات ویرایش شد");
 
+            }
+            ShowStudents();
+        }
+        private void ShowStudents()
+        {
+            GridStudent.AutoGenerateColumns = false;
+            GridStudent.DataSource = students.ToList();
+            if (GridStudent.RowCount > 0)
+            {
+                GridStudent.Rows[0].Selected = false;
             }
         }
 
@@ -127,5 +138,27 @@ namespace WinFormsApp1
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Sru1_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void ClearText()
+        {
+            txt_FirstName.Text = txt_LastName.Text = txt_ID.Text = "";
+            txt_FirstName.Focus();
+
+           
+            selectedStudent = null;
+
+
+        }
+       
+       
     }
 }
